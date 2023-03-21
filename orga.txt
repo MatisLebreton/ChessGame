@@ -1,0 +1,24 @@
+Créer le plateau en objet
+    des carrés
+        2 coordonnées h et v
+
+    Créer 64 rectangles définis par leur coordonnées
+    Changer les couleurs des rectangles
+    Ajouter les cotés avec les chiffres de 1 à 8 et les lettres A à H
+
+
+Créer les pièces
+    la position (dans quel carré)
+    le type
+        les mouvements possibles
+    la couleur
+
+
+
+
+Afficher les pièces
+Donner les mouvements aux pièces
+Faire le moteur du jeu (déplacement chacun son tour)
+Faire les règles du jeu
+
+

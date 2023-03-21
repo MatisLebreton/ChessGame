@@ -1,6 +1,8 @@
 import pygame
 import numpy as np
 from classes.case import Case
+from classes.pieces.piece import Piece
+from classes.pieces.pion import Pion
 
 
 class Plateau:
@@ -18,7 +20,11 @@ class Plateau:
                 cases[h, v] = Case(h, v)
         return cases
 
-    def afficher(self, surf, cases, police):
+    def creer_pieces(self):
+        pionBlanc = Pion("white", 0, 0)
+        return pionBlanc
+
+    def afficher(self, surf, cases, police, pieces):
         for h in range(8):
             # On écrit les cotés de l'échiqiuer
             image_texte_cote = police.render(self.cote_v[h], False, "black")
@@ -38,3 +44,4 @@ class Plateau:
 
             for v in range(8):
                 cases[h, v].dessiner(surf)
+            pieces.afficher(surf)

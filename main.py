@@ -10,12 +10,13 @@ police = pygame.font.SysFont("arial", 20)  # on fixe la police d'écriture
 
 board = Plateau(600, 600)  # On crée l'objet plateau
 cases = board.creer_cases()  # On crée l'ensemble des cases dans une matrice
+pieces = board.creer_pieces()
 
 run = True
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False  # Permet de quitter en cliquant sur la croix
-    board.afficher(surf, cases, police)  # Affichage du plateau
+    board.afficher(surf, cases, police, pieces)  # Affichage du plateau
     pygame.display.flip()
 pygame.quit()
