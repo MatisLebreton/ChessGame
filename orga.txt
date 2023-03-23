@@ -11,7 +11,7 @@ Créer les pièces
     la position (dans quel carré)
     le type
         les mouvements possibles
-    la couleur
+    la couleur        
 
 
 

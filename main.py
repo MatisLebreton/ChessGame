@@ -10,7 +10,7 @@ police = pygame.font.SysFont("arial", 20)  # on fixe la police d'écriture
 
 board = Plateau(600, 600)  # On crée l'objet plateau
 cases = board.creer_cases()  # On crée l'ensemble des cases dans une matrice
-pieces = board.creer_pieces()
+pieces = board.creer_pieces()  # On crée l'ensemble des pièces
 
 run = True
 while run:

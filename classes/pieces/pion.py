@@ -2,7 +2,9 @@ import pygame
 from classes.pieces.piece import Piece
 
 img_pion_blanc = pygame.image.load("ChessGame/img/pion_blanc.png")
+img_pion_blanc = pygame.transform.scale(img_pion_blanc, (25, 50))
 img_pion_noir = pygame.image.load("ChessGame/img/pion_noir.png")
+img_pion_noir = pygame.transform.scale(img_pion_noir, (25, 50))
 
 
 class Pion(Piece):
