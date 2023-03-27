@@ -3,6 +3,11 @@ import numpy as np
 from classes.case import Case
 from classes.pieces.piece import Piece
 from classes.pieces.pion import Pion
+from classes.pieces.tour import Tour
+from classes.pieces.cavalier import Cavalier
+from classes.pieces.fou import Fou
+from classes.pieces.dame import Dame
+from classes.pieces.roi import Roi
 
 
 class Plateau:
@@ -21,10 +26,27 @@ class Plateau:
         return cases
 
     def creer_pieces(self):
-        pieces = np.empty([2, 8], dtype=Piece)
+        pieces = np.empty([2, 16], dtype=Piece)
         for i in range(8):
             pieces[0, i] = Pion("blanc", i+1, 2)
             pieces[1, i] = Pion("noir", i+1, 7)
+        pieces[0, 8] = Tour("blanc", 1, 1)
+        pieces[0, 9] = Tour("blanc", 8, 1)
+        pieces[1, 8] = Tour("noir", 1, 8)
+        pieces[1, 9] = Tour("noir", 8, 8)
+        pieces[0, 10] = Cavalier("blanc", 2, 1)
+        pieces[0, 11] = Cavalier("blanc", 7, 1)
+        pieces[1, 10] = Cavalier("noir", 2, 8)
+        pieces[1, 11] = Cavalier("noir", 7, 8)
+        pieces[0, 12] = Fou("blanc", 3, 1)
+        pieces[0, 13] = Fou("blanc", 6, 1)
+        pieces[1, 12] = Fou("noir", 3, 8)
+        pieces[1, 13] = Fou("noir", 6, 8)
+        pieces[0, 14] = Dame("blanc", 4, 1)
+        pieces[0, 15] = Roi("blanc", 5, 1)
+        pieces[1, 14] = Dame("noir", 4, 8)
+        pieces[1, 15] = Roi("noir", 5, 8)
+
         return pieces
 
     def afficher(self, surf, cases, police, pieces):
@@ -48,7 +70,6 @@ class Plateau:
             for v in range(8):
                 cases[h, v].dessiner(surf)
 
-        for i in pieces:
-            i[0].afficher(surf)
-
-        # pieces[0, 0].afficher(surf)
+        for i in range(2):
+            for j in range(16):
+                pieces[i, j].afficher(surf)
