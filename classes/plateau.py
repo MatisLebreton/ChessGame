@@ -21,9 +21,11 @@ class Plateau:
         return cases
 
     def creer_pieces(self):
-        # pieces = np.empty([2, 16], dtype=Piece)
-        pionBlanc = Pion("white", 0, 0)
-        return pionBlanc
+        pieces = np.empty([2, 8], dtype=Piece)
+        for i in range(8):
+            pieces[0, i] = Pion("blanc", i+1, 2)
+            pieces[1, i] = Pion("noir", i+1, 7)
+        return pieces
 
     def afficher(self, surf, cases, police, pieces):
         for h in range(8):
@@ -45,4 +47,8 @@ class Plateau:
 
             for v in range(8):
                 cases[h, v].dessiner(surf)
-        pieces.afficher(surf)
+
+        for i in pieces:
+            i[0].afficher(surf)
+
+        # pieces[0, 0].afficher(surf)
