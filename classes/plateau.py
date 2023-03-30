@@ -25,7 +25,8 @@ class Plateau:
                 cases[h, v] = Case(h, v)
         return cases
 
-    def creer_pieces(self):
+    def creer_pieces(self):  # Initialisation des pièces
+        # Matrice regroupant toutes les pièces
         pieces = np.empty([2, 16], dtype=Piece)
         for i in range(8):
             pieces[0, i] = Pion("blanc", i+1, 2)
@@ -68,8 +69,8 @@ class Plateau:
                       ((h+1)*cases[0, 0].largeur+20, 9*cases[0, 0].largeur+10))
 
             for v in range(8):
-                cases[h, v].dessiner(surf)
+                cases[h, v].dessiner(surf)  # Affchage des cases
 
         for i in range(2):
             for j in range(16):
-                pieces[i, j].afficher(surf)
+                pieces[i, j].afficher(surf)  # Affichage des pièces

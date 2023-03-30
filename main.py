@@ -17,6 +17,11 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False  # Permet de quitter en cliquant sur la croix
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:  # Test de clic gauche souris
+            for i in range(8):
+                for j in range(8):
+                    if pygame.Rect.collidepoint(cases[i, j].dessiner(surf), pygame.mouse.get_pos()):
+                        cases[i, j].couleur = [20, 20, 20]
     board.afficher(surf, cases, police, pieces)  # Affichage du plateau
     pygame.display.flip()
 pygame.quit()
