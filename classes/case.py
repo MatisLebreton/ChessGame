@@ -12,7 +12,7 @@ class Case:
         else:
             self.couleur = 'white'
 
-        self.estLibre = True
+        self.contientPiece = False
 
     def dessiner(self, surf):  # On dessine les cases
         dessin = pygame.draw.rect(surf, self.couleur, pygame.Rect(

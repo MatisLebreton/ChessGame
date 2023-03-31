@@ -47,8 +47,12 @@ class Plateau:
         pieces[0, 15] = Roi("blanc", 5, 1)
         pieces[1, 14] = Dame("noir", 4, 8)
         pieces[1, 15] = Roi("noir", 5, 8)
-
         return pieces
+
+    def lienPiecesCases(self, cases, pieces):
+        for i in pieces:
+            for j in i:
+                cases[j.pos_h-1, j.pos_v-1].contientPiece = True
 
     def afficher(self, surf, cases, police, pieces):
         for h in range(8):
