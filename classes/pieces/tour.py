@@ -17,3 +17,6 @@ class Tour(Piece):
 
     def afficher(self, surf):
         return super().afficher(surf)
+
+    def afficherMvt(self):
+        return super().afficherMvt()

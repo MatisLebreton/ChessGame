@@ -10,3 +10,7 @@ class Piece:
 
     def afficher(self, surf):
         surf.blit(self.img, ((self.pos_h)*50+10, (self.pos_v)*50))
+
+    def afficherMvt(self):
+        self.mvtPoss = []
+        return self.mvtPoss

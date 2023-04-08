@@ -6,11 +6,14 @@ class Case:
         self.pos_h = h
         self.pos_v = v  # Position de la case
         self.largeur = 50  # Taille des cases
+        self.caractere = '-'
 
         if (h+v) % 2 == 0:
-            self.couleur = [100, 100, 100]
+            self.couleurInit = [100, 100, 100]
         else:
-            self.couleur = 'white'
+            self.couleurInit = 'white'
+
+        self.couleur = self.couleurInit
 
         self.contientPiece = False
 

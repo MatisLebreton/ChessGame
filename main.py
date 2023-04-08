@@ -19,6 +19,13 @@ def cliquer():
             if pygame.Rect.collidepoint(cases[i, j].dessiner(surf), pygame.mouse.get_pos()):
                 if cases[i, j].contientPiece:
                     cases[i, j].couleur = [20, 20, 20]
+                    for x in range(2):
+                        for y in range(16):
+                            if pieces[x, y].pos_h-1 == i and pieces[x, y].pos_v-1 == j:
+                                mvtPoss = pieces[x, y].afficherMvt()
+                                for case in mvtPoss:
+                                    cases[case.pos_h,
+                                          case.pos_v].couleur = [0, 100, 0]
 
 
 run = True

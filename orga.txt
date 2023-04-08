@@ -20,6 +20,9 @@ Donner les mouvements aux pièces
     Récupérer les coordonnées de la case correspondant au clic
     Regarder si cela correspond à une pièce
     Afficher les mouvements possibles
+        Piece : Liste de cases possibles
+        Quand je clique sur une case avec une pièce, 
+        je récupère la pièce correspondante et je change la couleur des cases 
     Récupérer les coordonnées du nouveau clic
     Déplacer la pièce si nécessaire
 
